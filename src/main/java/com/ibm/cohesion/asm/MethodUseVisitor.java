@@ -8,7 +8,7 @@ import org.objectweb.asm.Opcodes;
 
 import com.ibm.cohesion.data.Method;
 
-public class MethodUseRecorder extends MethodVisitor {
+public class MethodUseVisitor extends MethodVisitor {
 
     private final List<String> methodsCalled = new ArrayList<>();
     private final List<String> fieldsUsed = new ArrayList<>();
@@ -17,7 +17,7 @@ public class MethodUseRecorder extends MethodVisitor {
     private final List<Method> methodsToAppendTo;
     private final String className;
 
-    public MethodUseRecorder(String methodName, String methodDesc, List<Method> methodsToAppendTo, String className) {
+    public MethodUseVisitor(String methodName, String methodDesc, List<Method> methodsToAppendTo, String className) {
         super(Opcodes.ASM5);
         this.methodName = methodName;
         this.methodDesc = methodDesc;

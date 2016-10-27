@@ -11,7 +11,7 @@ import org.objectweb.asm.Opcodes;
 
 import com.ibm.cohesion.data.Method;
 
-public class MethodUseRecorderTest {
+public class MethodUseVisitorTest {
 
     private final String testMethodName = "testMethod";
     private final String testClassName = "TestClass";
@@ -25,7 +25,7 @@ public class MethodUseRecorderTest {
     
     @Test
     public void methodRecordedWithNameAndId() {
-        MethodUseRecorder testObject = new MethodUseRecorder(testMethodName, testMethodDesc, methodsRecorded, testClassName);
+        MethodUseVisitor testObject = new MethodUseVisitor(testMethodName, testMethodDesc, methodsRecorded, testClassName);
 
         testObject.visitEnd();
 
@@ -37,7 +37,7 @@ public class MethodUseRecorderTest {
 
     @Test
     public void recordsFieldUsed() {
-        MethodUseRecorder testObject = new MethodUseRecorder(testMethodName, testMethodDesc, methodsRecorded, testClassName);
+        MethodUseVisitor testObject = new MethodUseVisitor(testMethodName, testMethodDesc, methodsRecorded, testClassName);
         String testFieldName = "testField";
 
         testObject.visitFieldInsn(Opcodes.ASM5, testClassName, testFieldName, "");
@@ -51,7 +51,7 @@ public class MethodUseRecorderTest {
 
     @Test
     public void fieldUsedFromOtherClassNotRecorded() {
-        MethodUseRecorder testObject = new MethodUseRecorder(testMethodName, testMethodDesc, methodsRecorded, testClassName);
+        MethodUseVisitor testObject = new MethodUseVisitor(testMethodName, testMethodDesc, methodsRecorded, testClassName);
         String testFieldName = "testField";
 
         testObject.visitFieldInsn(Opcodes.ASM5, "OtherClass", testFieldName, "");
@@ -63,7 +63,7 @@ public class MethodUseRecorderTest {
     
     @Test
     public void recordsMethodCall() {
-        MethodUseRecorder testObject = new MethodUseRecorder(testMethodName, testMethodDesc, methodsRecorded, testClassName);
+        MethodUseVisitor testObject = new MethodUseVisitor(testMethodName, testMethodDesc, methodsRecorded, testClassName);
         String calledMethodName = "testMethod";
         String calledMethodDesc = "()V";
 
@@ -78,7 +78,7 @@ public class MethodUseRecorderTest {
     
     @Test
     public void methodCallFromOtherClassNotRecorded() {
-        MethodUseRecorder testObject = new MethodUseRecorder(testMethodName, testMethodDesc, methodsRecorded, testClassName);
+        MethodUseVisitor testObject = new MethodUseVisitor(testMethodName, testMethodDesc, methodsRecorded, testClassName);
         String calledMethodName = "testMethod";
         String calledMethodDesc = "()V";
 
