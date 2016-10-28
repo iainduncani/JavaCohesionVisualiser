@@ -11,4 +11,4 @@ This will create an HTML page in the directory you run the command from and open
 ## Example diagram
 Generated for the class [SiteDocuments.java](https://github.com/gameontext/gameon-map/blob/master/map-app/src/main/java/org/gameontext/map/db/SiteDocuments.java).
 
-![cohesion diagram for SiteDocuments.java](http://url/to/img.png)
+![cohesion diagram for SiteDocuments.java](example.png)
