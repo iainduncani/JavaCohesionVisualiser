@@ -1,5 +1,7 @@
 # Java Cohesion Visualiser
-A tool to visualise the methods and fields network graph for a Java class to give an impression of it's cohesion.
+A tool to visualise the methods and fields as a network graph for a Java class to give an impression of it's cohesion.  An example of a class with high cohesion would be one where each method uses many/most of the other methods and fields in the class.  A class with low cohesion would be one where you see islands of methods that do not interact with other methods in the class, these are good candidates for splitting into their own class to adhear to the Single Responsibility Principle.
+
+The tool works by using [asm]() to analyze a .class file and [visjs](http://visjs.org/) to visualise it.
 
 ## Running the tool
 1. Download the latest release of the JavaCohesionVisualiser.jar
