@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <title>Class cohesion visualisation</title>
+
+  <script type="text/javascript" src="http://visjs.org/dist/vis.js"></script>
+  <link href="http://visjs.org/dist/vis.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    #mynetwork {
+      width: 1200px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+  </style>
+
+</head>
+<body>
+
+<p>
+  Visualisation of the class cohesion by showing methods (ellipses) and fields (squares) and how they are used.
+</p>
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+  var nodes = new vis.DataSet(%NODES%);
+  var edges = new vis.DataSet(%EDGES%);
+
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {};
+  var network = new vis.Network(container, data, options);
+</script>
+</body>
+</html>
