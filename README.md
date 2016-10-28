@@ -11,6 +11,6 @@ The tool works by using [asm]() to analyze a .class file and [visjs](http://visj
 This will create an HTML page in the directory you run the command from and open a browser to show the cohesion visualisation. 
 
 ## Example diagram
-Generated for the class [SiteDocuments.java](https://github.com/gameontext/gameon-map/blob/master/map-app/src/main/java/org/gameontext/map/db/SiteDocuments.java).
+Generated for the class [SiteDocuments.java](https://github.com/gameontext/gameon-map/blob/master/map-app/src/main/java/org/gameontext/map/db/SiteDocuments.java). Note how the "query" methods on the right hand side are their own little island, this is a good example of a potential new class to handle the querying.
 
 ![cohesion diagram for SiteDocuments.java](example.png)
